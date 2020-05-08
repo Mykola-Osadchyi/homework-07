@@ -1,0 +1,261 @@
+/* montserrat-regular - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'),
+    url('../fonts/montserrat-v14-latin-regular.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('../fonts/montserrat-v14-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* montserrat-700 - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat Bold'), local('Montserrat-Bold'),
+    url('../fonts/montserrat-v14-latin-700.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('../fonts/montserrat-v14-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* roboto-slab-regular - latin */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+    url('../fonts/roboto-slab-v11-latin-regular.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('../fonts/roboto-slab-v11-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* petit-formal-script-regular - latin  --- I will use it instead "Wisdom Script"*/
+@font-face {
+  font-family: 'Petit Formal Script';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Petit Formal Script'), local('PetitFormalScript-Regular'),
+    url('../fonts/petit-formal-script-v7-latin-regular.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('../fonts/petit-formal-script-v7-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* arapey-italic - latin --- I will use it instead "Droid Serif"*/
+@font-face {
+  font-family: 'Arapey';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Arapey Italic'), local('Arapey-Italic'),
+    url('../fonts/arapey-v8-latin-italic.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('../fonts/arapey-v8-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+:root {
+  --first-font: 'Montserrat', sans-serif;
+  --second-font: 'Roboto Slab', serif;
+  --third-font: 'Arapey', serif;
+  --fourth-font: 'Petit Formal Script', serif;
+  --first-color: rgb(34, 34, 34);
+  --second-color: rgb(254, 209, 54);
+  --third-color: rgb(119, 119, 119);
+  --fourth-color: rgb(255, 255, 255);
+  --fifth-color: rgb(187, 187, 187);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+.container {
+  width: 940px;
+  margin: 0 auto;
+  outline: 1px solid red;
+}
+
+.visually-hidden {
+  /* Удаляем элемент из потока документа */
+  position: absolute;
+  /* Временное решение для неверно произносимого, размазанного текста */
+  white-space: nowrap;
+  /* Устанавливаем минимально возможный размер (некоторые скринридеры игнорируют элементы с нулевой высотой и шириной) */
+  width: 1px;
+  height: 1px;
+  /* Скрываем вылезающий за границы контент */
+  overflow: hidden;
+  /* Сбрасываем любые свойства, которые могут повлиять на размер элемента */
+  border: 0;
+  padding: 0;
+  /* Вырезаем ту часть контента, которая должна отображаться. */
+  /* Устаревшее свойство clip для старых браузеров */
+  clip: rect(0 0 0 0);
+  /* clip-path для новых браузеров. inset(50%) определяет область вставки, которая позволит контенту исчезнуть.  */
+  clip-path: inset(50%);
+  /* Похоже, никто до конца не понимает, почему тут margin: -1px. Кроме того, это приводит к проблемам (читай: https://github.com/h5bp/html5-boilerplate/issues/1985). */
+  margin: -1px;
+}
+
+/* ! Header */
+
+.header-menu {
+  padding: 42px 0px 118px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.header-site-menu {
+  display: flex;
+}
+
+.header-site-logo {
+  font-size: 26px;
+  font-family: var(--fourth-font);
+  color: var(--first-color);
+  font-weight: bold;
+  line-height: 40px;
+  text-align: left;
+}
+
+.header-site-menu-item:not(:last-child) {
+  margin-right: 40px;
+}
+
+.header-site-menu-item-link {
+  font-size: 14px;
+  font-family: var(--first-font);
+  color: var(--first-color);
+  text-transform: uppercase;
+  line-height: 40px;
+  font-weight: 400;
+  text-align: center;
+  position: relative;
+}
+
+.header-site-menu-item-link:hover,
+.header-site-logo:hover {
+  color: var(--second-color);
+  transition: opacity 200ms linear, color 200ms linear;
+}
+
+/* ! Services */
+.section-services {
+  padding: 98px 0px 122px 0px;
+}
+
+.section-title {
+  margin-bottom: 18px;
+  font-size: 40px;
+  font-family: var(--first-font);
+  color: var(--first-color);
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 48px;
+  text-align: center;
+  letter-spacing: -1px;
+}
+
+.section-subtitle {
+  margin-bottom: 78px;
+  font-size: 16px;
+  font-family: var(--third-font);
+  color: var(--third-color);
+  line-height: 20px;
+  text-align: center;
+  text-transform: none;
+}
+
+.section-service-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.section-service-list-item {
+  width: 274px;
+}
+
+.section-service-list-item::before {
+  display: block;
+  content: '';
+  border-width: 3px;
+  border-color: var(--second-color);
+  border-style: solid;
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--fourth-color);
+  margin-bottom: 28px;
+}
+
+.section-service-list-item:nth-of-type(1)::before {
+  background-image: url(../img/services/basket.png);
+}
+.section-service-list-item:nth-of-type(2)::before {
+  background-image: url(../img/services/laptop.png);
+}
+.section-service-list-item:nth-of-type(3)::before {
+  background-image: url(../img/services/locked.png);
+}
+
+.service-list-item-name {
+  margin-bottom: 18px;
+  font-size: 18px;
+  font-family: var(--first-font);
+  font-weight: 700;
+  color: var(--first-color);
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: -0.45px;
+}
+
+.service-list-item-description {
+  font-size: 14px;
+  font-family: var(--second-font);
+  color: var(--third-color);
+  line-height: 1.4;
+  text-align: center;
+  letter-spacing: -0.35px;
+}
+
+/* ! Contact us */
+.section-contact-us {
+  padding: 106px 0px 114px 0px;
+  background-color: var(--first-color);
+  background-image: url(../img/contact-us/map.png);
+  background-repeat: no-repeat;
+  background-position: top 120px right;
+}
+.section-contact-us-title {
+  color: var(--fourth-color);
+}
