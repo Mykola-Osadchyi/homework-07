@@ -66,5 +66,40 @@
   <section class="section-contact-us">
     <h2 class="section-title section-contact-us-title">Contact us</h2>
     <p class="section-subtitle">Proin iaculis purus consequat sem cure.</p>
+    <form class="section-contact-us-form container" action="#">
+      <div class="section-contact-us-form-input-wraper">
+        <input
+          class="section-contact-us-form-input"
+          type="text"
+          name="user-name"
+          placeholder="Your name *"
+          required
+          minlength="2"
+        />
+        <input
+          class="section-contact-us-form-input"
+          type="email"
+          name="user-email"
+          placeholder="Your e-mail *"
+          required
+        />
+        <input
+          class="section-contact-us-form-input"
+          type="text"
+          name="user-subject"
+          placeholder="Subject *"
+          required
+          minlength="2"
+        />
+      </div>
+      <textarea
+        class="section-contact-us-form-textarea"
+        name="user-message"
+        placeholder="Your message *"
+        required
+        minlength="10"
+      ></textarea>
+      <button class="section-contact-us-form-button">Send message</button>
+    </form>
   </section>
 </main>

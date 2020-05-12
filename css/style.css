@@ -58,11 +58,11 @@
   --second-font: 'Roboto Slab', serif;
   --third-font: 'Arapey', serif;
   --fourth-font: 'Petit Formal Script', serif;
-  --first-color: rgb(34, 34, 34);
-  --second-color: rgb(254, 209, 54);
-  --third-color: rgb(119, 119, 119);
-  --fourth-color: rgb(255, 255, 255);
-  --fifth-color: rgb(187, 187, 187);
+  --first-color: #222222;
+  --second-color: #fed136;
+  --third-color: #777777;
+  --fourth-color: #ffffff;
+  --fifth-color: #bbbbbb;
 }
 
 * {
@@ -91,41 +91,18 @@ a {
 }
 
 body {
-  background-color: #ffffff;
+  background-color: var(--fourth-color);
 }
 
 .container {
   width: 940px;
   margin: 0 auto;
-  outline: 1px solid red;
-}
-
-.visually-hidden {
-  /* Удаляем элемент из потока документа */
-  position: absolute;
-  /* Временное решение для неверно произносимого, размазанного текста */
-  white-space: nowrap;
-  /* Устанавливаем минимально возможный размер (некоторые скринридеры игнорируют элементы с нулевой высотой и шириной) */
-  width: 1px;
-  height: 1px;
-  /* Скрываем вылезающий за границы контент */
-  overflow: hidden;
-  /* Сбрасываем любые свойства, которые могут повлиять на размер элемента */
-  border: 0;
-  padding: 0;
-  /* Вырезаем ту часть контента, которая должна отображаться. */
-  /* Устаревшее свойство clip для старых браузеров */
-  clip: rect(0 0 0 0);
-  /* clip-path для новых браузеров. inset(50%) определяет область вставки, которая позволит контенту исчезнуть.  */
-  clip-path: inset(50%);
-  /* Похоже, никто до конца не понимает, почему тут margin: -1px. Кроме того, это приводит к проблемам (читай: https://github.com/h5bp/html5-boilerplate/issues/1985). */
-  margin: -1px;
 }
 
 /* ! Header */
 
 .header-menu {
-  padding: 42px 0px 118px 0px;
+  padding: 42px 0px 106px 0px;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -141,7 +118,6 @@ body {
   color: var(--first-color);
   font-weight: bold;
   line-height: 40px;
-  text-align: left;
 }
 
 .header-site-menu-item:not(:last-child) {
@@ -154,24 +130,24 @@ body {
   color: var(--first-color);
   text-transform: uppercase;
   line-height: 40px;
-  font-weight: 400;
-  text-align: center;
-  position: relative;
+  font-weight: 700;
 }
 
 .header-site-menu-item-link:hover,
-.header-site-logo:hover {
+.header-site-logo:hover,
+.header-site-menu-item-link:focus,
+.header-site-logo:focus {
   color: var(--second-color);
   transition: opacity 200ms linear, color 200ms linear;
 }
 
 /* ! Services */
 .section-services {
-  padding: 98px 0px 122px 0px;
+  padding-bottom: 86px;
 }
 
 .section-title {
-  margin-bottom: 18px;
+  margin-bottom: 10px;
   font-size: 40px;
   font-family: var(--first-font);
   color: var(--first-color);
@@ -183,13 +159,12 @@ body {
 }
 
 .section-subtitle {
-  margin-bottom: 78px;
-  font-size: 16px;
+  margin-bottom: 76px;
+  font-size: 20px;
   font-family: var(--third-font);
   color: var(--third-color);
   line-height: 20px;
   text-align: center;
-  text-transform: none;
 }
 
 .section-service-list {
@@ -243,7 +218,7 @@ body {
   font-size: 14px;
   font-family: var(--second-font);
   color: var(--third-color);
-  line-height: 1.4;
+  line-height: 1.6;
   text-align: center;
   letter-spacing: -0.35px;
 }
@@ -258,4 +233,87 @@ body {
 }
 .section-contact-us-title {
   color: var(--fourth-color);
+}
+
+.section-contact-us-form {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.section-contact-us-form-input {
+  display: block;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  background-color: var(--fourth-color);
+  width: 456px;
+  height: 54px;
+  padding-left: 20px;
+  font-size: 14px;
+  font-family: var(--first-font);
+  color: var(--fifth-color);
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: -0.35px;
+}
+
+.section-contact-us-form input:not(:last-child) {
+  margin-bottom: 26px;
+}
+
+.section-contact-us-form-textarea {
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  background-color: var(--fourth-color);
+  width: 456px;
+  height: 214px;
+  resize: none;
+  padding-left: 20px;
+  padding-top: 18px;
+  margin-bottom: 30px;
+  font-size: 14px;
+  font-family: var(--first-font);
+  color: var(--fifth-color);
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: -0.35px;
+}
+
+.section-contact-us-form-input:required:focus:valid:not(:placeholder-shown),
+.section-contact-us-form-textarea:required:focus:valid:not(:placeholder-shown) {
+  outline: 1px solid #008000;
+}
+
+.section-contact-us-form-input:required:focus:invalid:not(:placeholder-shown),
+.section-contact-us-form-textarea:required:focus:invalid:not(:placeholder-shown) {
+  outline: 1px solid #ff0000;
+}
+
+.section-contact-us-form-input::placeholder,
+.section-contact-us-form-textarea::placeholder {
+  font-size: 14px;
+  font-family: var(--first-font);
+  color: var(--fifth-color);
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: left;
+  letter-spacing: -0.35px;
+}
+
+.section-contact-us-form-button {
+  display: block;
+  margin: auto;
+  font-size: 18px;
+  font-family: var(--first-font);
+  color: var(--fourth-color);
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: center;
+  border-radius: 3px;
+  border-style: none;
+  background-color: var(--second-color);
+  width: 240px;
+  height: 66px;
 }
