@@ -249,7 +249,7 @@ body {
   padding-left: 20px;
   font-size: 14px;
   font-family: var(--first-font);
-  color: var(--fifth-color);
+  color: var(--first-color);
   font-weight: bold;
   line-height: 1.2;
   letter-spacing: -0.35px;
@@ -271,7 +271,7 @@ body {
   margin-bottom: 30px;
   font-size: 14px;
   font-family: var(--first-font);
-  color: var(--fifth-color);
+  color: var(--first-color);
   font-weight: bold;
   line-height: 1.2;
   letter-spacing: -0.35px;
