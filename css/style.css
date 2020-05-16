@@ -115,7 +115,7 @@ body {
 .main-header-site-logo {
   font-size: 26px;
   font-family: var(--fourth-font);
-  color: var(--first-color);
+  color: var(--second-color);
   font-weight: bold;
   line-height: 40px;
 }
@@ -134,9 +134,7 @@ body {
 }
 
 .main-header-site-menu-item-link:hover,
-.main-header-site-logo:hover,
-.main-header-site-menu-item-link:focus,
-.main-header-site-logo:focus {
+.main-header-site-menu-item-link:focus {
   color: var(--second-color);
   transition: opacity 200ms linear, color 200ms linear;
 }
@@ -291,14 +289,8 @@ body {
 
 .section-contact-us-form-input::placeholder,
 .section-contact-us-form-textarea::placeholder {
-  font-size: 14px;
-  font-family: var(--first-font);
   color: var(--fifth-color);
-  font-weight: bold;
   text-transform: uppercase;
-  line-height: 1.2;
-  text-align: left;
-  letter-spacing: -0.35px;
 }
 
 .section-contact-us-form-button {
@@ -316,4 +308,5 @@ body {
   background-color: var(--second-color);
   width: 240px;
   height: 66px;
+  cursor: pointer;
 }
